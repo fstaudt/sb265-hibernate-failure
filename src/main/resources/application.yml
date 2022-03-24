@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: sb265-hibernate-failure
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sb265_hibernate_failure
+    username: postgres
+    password: postgres
